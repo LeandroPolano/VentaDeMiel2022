@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VentaDeMiel2022.Entidades.Entidades
+﻿namespace VentaDeMiel2022.Entidades.Entidades
 {
     public class Provincia
     {
@@ -12,8 +6,8 @@ namespace VentaDeMiel2022.Entidades.Entidades
 
         public string NombreProvincia { get; set; }
 
-        public virtual Pais Pais { get; set; }
+        public int PaisId { get; set; }
 
-
+        public Pais NombrePais { get; set; }
     }
 }

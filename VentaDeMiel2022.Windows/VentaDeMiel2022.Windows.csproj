@@ -93,6 +93,18 @@
     <Compile Include="FrmPaisAE.Designer.cs">
       <DependentUpon>FrmPaisAE.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProvincia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProvincia.Designer.cs">
+      <DependentUpon>FrmProvincia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProvinciaAE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProvinciaAE.Designer.cs">
+      <DependentUpon>FrmProvinciaAE.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +133,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPaisAE.resx">
       <DependentUpon>FrmPaisAE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProvincia.resx">
+      <DependentUpon>FrmProvincia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProvinciaAE.resx">
+      <DependentUpon>FrmProvinciaAE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>

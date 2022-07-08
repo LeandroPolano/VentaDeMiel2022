@@ -45,9 +45,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicios\Facades\IServicioCliente.cs" />
     <Compile Include="Servicios\Facades\IServicioPais.cs" />
+    <Compile Include="Servicios\Facades\IServicioProvincia.cs" />
     <Compile Include="Servicios\Facades\IServicioTipoEnvase.cs" />
     <Compile Include="Servicios\ServicioClientes.cs" />
     <Compile Include="Servicios\ServicioPaises.cs" />
+    <Compile Include="Servicios\ServicioProvincia.cs" />
     <Compile Include="Servicios\ServicioTipoEnvase.cs" />
   </ItemGroup>
   <ItemGroup />

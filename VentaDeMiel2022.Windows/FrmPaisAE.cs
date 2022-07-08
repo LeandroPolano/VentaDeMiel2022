@@ -36,13 +36,29 @@ namespace VentaDeMiel2022.Windows
 
         private void GuardarIconButton_Click(object sender, EventArgs e)
         {
-            if (pais==null)
+            if (ValidadDatos())
             {
-                pais = new Pais();
+                if (pais == null)
+                {
+                    pais = new Pais();
+                }
+
+                pais.NombrePais = PaisTextBox.Text;
+                DialogResult = DialogResult.OK; 
+            }
+        }
+
+        private bool ValidadDatos()
+        {
+            bool valido = true;
+            errorProvider1.Clear();
+            if (string.IsNullOrEmpty(PaisTextBox.Text.Trim()))
+            {
+                valido = false;
+                errorProvider1.SetError(PaisTextBox, "Ingrece un Pais");
             }
 
-            pais.NombrePais = PaisTextBox.Text;
-            DialogResult = DialogResult.OK;
+            return valido;  
         }
 
         public void SetTipo(Pais pais)

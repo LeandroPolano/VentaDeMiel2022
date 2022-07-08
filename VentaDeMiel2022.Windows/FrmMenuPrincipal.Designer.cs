@@ -35,7 +35,7 @@ namespace VentaDeMiel2022.Windows
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.ProvinciaButton = new System.Windows.Forms.Button();
             this.TipoEnvaseButton = new System.Windows.Forms.Button();
             this.PaisButton = new System.Windows.Forms.Button();
             this.ClientesButton = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@ namespace VentaDeMiel2022.Windows
             this.splitContainer1.Panel2.Controls.Add(this.button7);
             this.splitContainer1.Panel2.Controls.Add(this.button5);
             this.splitContainer1.Panel2.Controls.Add(this.button6);
-            this.splitContainer1.Panel2.Controls.Add(this.button3);
+            this.splitContainer1.Panel2.Controls.Add(this.ProvinciaButton);
             this.splitContainer1.Panel2.Controls.Add(this.TipoEnvaseButton);
             this.splitContainer1.Panel2.Controls.Add(this.PaisButton);
             this.splitContainer1.Panel2.Controls.Add(this.ClientesButton);
@@ -132,15 +132,16 @@ namespace VentaDeMiel2022.Windows
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // ProvinciaButton
             // 
-            this.button3.Font = new System.Drawing.Font("Open Sans", 10.2F);
-            this.button3.Location = new System.Drawing.Point(64, 144);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 55);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.ProvinciaButton.Font = new System.Drawing.Font("Open Sans", 10.2F);
+            this.ProvinciaButton.Location = new System.Drawing.Point(64, 144);
+            this.ProvinciaButton.Name = "ProvinciaButton";
+            this.ProvinciaButton.Size = new System.Drawing.Size(161, 55);
+            this.ProvinciaButton.TabIndex = 3;
+            this.ProvinciaButton.Text = "Provincia";
+            this.ProvinciaButton.UseVisualStyleBackColor = true;
+            this.ProvinciaButton.Click += new System.EventHandler(this.ProvinciaButton_Click);
             // 
             // TipoEnvaseButton
             // 
@@ -205,7 +206,7 @@ namespace VentaDeMiel2022.Windows
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button ProvinciaButton;
         private System.Windows.Forms.Button TipoEnvaseButton;
         private System.Windows.Forms.Button PaisButton;
         private System.Windows.Forms.Button ClientesButton;

@@ -101,6 +101,8 @@ namespace VentaDeMiel2022.Windows
 
             var r = DatosDataGridView.SelectedRows[0];
             Pais p = (Pais) r.Tag;
+            Pais pAuxiliar = (Pais)p.Clone();
+
             FrmPaisAE frm = new FrmPaisAE() {Text = "Editar Pais"};
             frm.SetTipo(p);
             DialogResult dr = frm.ShowDialog(this);
@@ -119,6 +121,7 @@ namespace VentaDeMiel2022.Windows
             }
             catch (Exception exception)
             {
+                SetearFila(r,pAuxiliar);
                 MessageBox.Show(exception.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

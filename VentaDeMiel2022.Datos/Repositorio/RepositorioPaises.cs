@@ -43,6 +43,10 @@ namespace VentaDeMiel2022.Datos.Repositorio
             }
             catch (Exception e)
             {
+                if (e.InnerException!=null && e.InnerException.InnerException.Message.Contains("IX"))
+                {
+                    throw new Exception("Registro Existente");
+                }
                 throw new Exception(e.Message);
             }
         }
@@ -51,8 +55,9 @@ namespace VentaDeMiel2022.Datos.Repositorio
         {
             try
             {
-                return context.Paises.ToList();
-
+                return context.Paises
+                    .AsNoTracking()
+                    .ToList();
 
             }
             catch (Exception e)
@@ -77,6 +82,10 @@ namespace VentaDeMiel2022.Datos.Repositorio
             }
             catch (Exception e)
             {
+                if (e.InnerException!=null && e.InnerException.InnerException.Message.Contains("REFERENCE"))
+                {
+                    throw new Exception("El registro esta relacionado...");
+                }
                 throw new Exception(e.Message);
             }
         }

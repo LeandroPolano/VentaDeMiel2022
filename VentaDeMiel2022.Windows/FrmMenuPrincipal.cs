@@ -54,5 +54,11 @@ namespace VentaDeMiel2022.Windows
         {
 
         }
+
+        private void ProvinciaButton_Click(object sender, EventArgs e)
+        {
+            FrmProvincia frm = new FrmProvincia() { Text = "Provincias" };
+            DialogResult dr = frm.ShowDialog(this);
+        }
     }
 }
