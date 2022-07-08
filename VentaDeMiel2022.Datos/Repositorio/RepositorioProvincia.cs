@@ -51,8 +51,9 @@ namespace VentaDeMiel2022.Datos.Repositorio
 
         public List<Provincia> GetLista()
         {
-            try
+            try 
             {
+
                 return context.Provincias
                     .Include(p => p.NombrePais)
                     .AsNoTracking()
