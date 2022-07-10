@@ -63,6 +63,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmBuscarPorPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarPorPais.Designer.cs">
+      <DependentUpon>FrmBuscarPorPais.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmClienteAE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,11 @@
     <Compile Include="frmVentas.Designer.cs">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HelperCombos.cs" />
+    <Compile Include="Helpers\HelperForm.cs" />
+    <Compile Include="Helpers\HelperGrid.cs" />
+    <Compile Include="Helpers\HelperMensaje.cs" />
+    <Compile Include="Helpers\TipoMensaje.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FrmTipoEnvase.cs">
@@ -119,6 +130,9 @@
     <Compile Include="FrmTipoEnvase.Designer.cs">
       <DependentUpon>FrmTipoEnvase.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmBuscarPorPais.resx">
+      <DependentUpon>FrmBuscarPorPais.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmClienteAE.resx">
       <DependentUpon>FrmClienteAE.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,9 +183,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\VentaDeMiel2022.Entidades\VentaDeMiel2022.Entidades.csproj">
       <Project>{7b5b84ce-1426-4b91-84a1-a48a83aca4e5}</Project>

@@ -43,10 +43,10 @@ namespace VentaDeMiel2022.Datos.Repositorio
             }
             catch (Exception e)
             {
-                if (e.InnerException!=null && e.InnerException.InnerException.Message.Contains("IX"))
-                {
-                    throw new Exception("Registro Existente");
-                }
+                //if (e.InnerException!=null && e.InnerException.InnerException.Message.Contains("IX"))
+                //{
+                //    throw new Exception("Registro Existente");
+                //}
                 throw new Exception(e.Message);
             }
         }
@@ -82,10 +82,10 @@ namespace VentaDeMiel2022.Datos.Repositorio
             }
             catch (Exception e)
             {
-                if (e.InnerException!=null && e.InnerException.InnerException.Message.Contains("REFERENCE"))
-                {
-                    throw new Exception("El registro esta relacionado...");
-                }
+                //if (e.InnerException!=null && e.InnerException.InnerException.Message.Contains("REFERENCE"))
+                //{
+                //    throw new Exception("El registro esta relacionado...");
+                //}
                 throw new Exception(e.Message);
             }
         }
@@ -94,6 +94,37 @@ namespace VentaDeMiel2022.Datos.Repositorio
         public Pais GetPaisPorId(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public bool Existe(Pais pais)
+        {
+            try
+            {
+                if (pais.PaisId == 0)
+                {
+                    return context.Paises
+                        .Any(tp => tp.NombrePais == pais.NombrePais);
+                }
+                return context.Paises.Any(tp => tp.NombrePais == pais.NombrePais &&
+                                                tp.PaisId != pais.PaisId);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public bool EstaRelacionado(Pais pais)
+        {
+            try
+            {
+                return context.Provincias
+                    .Any(p => p.PaisId == pais.PaisId);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
     }
 }

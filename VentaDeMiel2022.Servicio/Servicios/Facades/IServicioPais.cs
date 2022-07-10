@@ -16,5 +16,8 @@ namespace VentaDeMiel2022.Servicio.Servicios.Facades
         void Borrar(int paisId);
 
         Pais GetPaisPorId(int id);
+
+        bool Existe(Pais pais);
+        bool EstaRelacionado(Pais pais);
     }
 }

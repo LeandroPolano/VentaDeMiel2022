@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VentaDeMiel2022.Entidades.Entidades;
+using VentaDeMiel2022.Entidades.Enum;
 
 namespace VentaDeMiel2022.Servicio.Servicios.Facades
 {
@@ -11,10 +12,13 @@ namespace VentaDeMiel2022.Servicio.Servicios.Facades
     {
         void Guardar(Provincia provincia);
 
-        List<Provincia> GetLista();
+        List<Provincia> GetLista(Pais tp, Orden orden);
 
         void Borrar(int provinciaId);
 
         Provincia GetProvinciaPorId(int id);
+
+        bool Existe(Provincia provincia);
+        bool EstaRelacionado(Provincia provincia);
     }
 }

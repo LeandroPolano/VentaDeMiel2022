@@ -33,11 +33,16 @@ namespace VentaDeMiel2022.Windows
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NuevoIconButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.CerrarButton = new System.Windows.Forms.Button();
             this.EditarIconButton = new System.Windows.Forms.Button();
             this.BorrarIconButton = new System.Windows.Forms.Button();
             this.DatosDataGridView = new System.Windows.Forms.DataGridView();
             this.colPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CerrarButton = new System.Windows.Forms.Button();
+            this.PrecioDescIconButton = new FontAwesome.Sharp.IconButton();
+            this.OrdenarPrecioAsciIconButton = new FontAwesome.Sharp.IconButton();
+            this.OrdenarZAPorProductoiconButton = new FontAwesome.Sharp.IconButton();
+            this.OredenarAZPorProductoiconButton = new FontAwesome.Sharp.IconButton();
+            this.FiltrariconButton = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -65,6 +70,11 @@ namespace VentaDeMiel2022.Windows
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.PrecioDescIconButton);
+            this.splitContainer1.Panel1.Controls.Add(this.OrdenarPrecioAsciIconButton);
+            this.splitContainer1.Panel1.Controls.Add(this.OrdenarZAPorProductoiconButton);
+            this.splitContainer1.Panel1.Controls.Add(this.OredenarAZPorProductoiconButton);
+            this.splitContainer1.Panel1.Controls.Add(this.FiltrariconButton);
             this.splitContainer1.Panel1.Controls.Add(this.CerrarButton);
             this.splitContainer1.Panel1.Controls.Add(this.EditarIconButton);
             this.splitContainer1.Panel1.Controls.Add(this.BorrarIconButton);
@@ -73,10 +83,20 @@ namespace VentaDeMiel2022.Windows
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.DatosDataGridView);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
+            this.splitContainer1.Size = new System.Drawing.Size(957, 450);
             this.splitContainer1.SplitterDistance = 79;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 3;
+            // 
+            // CerrarButton
+            // 
+            this.CerrarButton.Location = new System.Drawing.Point(853, 11);
+            this.CerrarButton.Name = "CerrarButton";
+            this.CerrarButton.Size = new System.Drawing.Size(83, 57);
+            this.CerrarButton.TabIndex = 3;
+            this.CerrarButton.Text = "Cerrar";
+            this.CerrarButton.UseVisualStyleBackColor = true;
+            this.CerrarButton.Click += new System.EventHandler(this.CerrarButton_Click);
             // 
             // EditarIconButton
             // 
@@ -126,7 +146,7 @@ namespace VentaDeMiel2022.Windows
             this.DatosDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatosDataGridView.RowTemplate.Height = 28;
             this.DatosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatosDataGridView.Size = new System.Drawing.Size(800, 366);
+            this.DatosDataGridView.Size = new System.Drawing.Size(957, 366);
             this.DatosDataGridView.TabIndex = 0;
             // 
             // colPais
@@ -138,21 +158,91 @@ namespace VentaDeMiel2022.Windows
             this.colPais.ReadOnly = true;
             this.colPais.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // CerrarButton
+            // PrecioDescIconButton
             // 
-            this.CerrarButton.Location = new System.Drawing.Point(705, 12);
-            this.CerrarButton.Name = "CerrarButton";
-            this.CerrarButton.Size = new System.Drawing.Size(83, 57);
-            this.CerrarButton.TabIndex = 3;
-            this.CerrarButton.Text = "Cerrar";
-            this.CerrarButton.UseVisualStyleBackColor = true;
-            this.CerrarButton.Click += new System.EventHandler(this.CerrarButton_Click);
+            this.PrecioDescIconButton.BackColor = System.Drawing.Color.Transparent;
+            this.PrecioDescIconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrecioDescIconButton.IconChar = FontAwesome.Sharp.IconChar.SortNumericDesc;
+            this.PrecioDescIconButton.IconColor = System.Drawing.Color.DodgerBlue;
+            this.PrecioDescIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.PrecioDescIconButton.Location = new System.Drawing.Point(726, 11);
+            this.PrecioDescIconButton.Margin = new System.Windows.Forms.Padding(4);
+            this.PrecioDescIconButton.Name = "PrecioDescIconButton";
+            this.PrecioDescIconButton.Size = new System.Drawing.Size(93, 58);
+            this.PrecioDescIconButton.TabIndex = 6;
+            this.PrecioDescIconButton.Text = " Asc";
+            this.PrecioDescIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.PrecioDescIconButton.UseVisualStyleBackColor = false;
+            // 
+            // OrdenarPrecioAsciIconButton
+            // 
+            this.OrdenarPrecioAsciIconButton.BackColor = System.Drawing.Color.Transparent;
+            this.OrdenarPrecioAsciIconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OrdenarPrecioAsciIconButton.IconChar = FontAwesome.Sharp.IconChar.ArrowDown19;
+            this.OrdenarPrecioAsciIconButton.IconColor = System.Drawing.Color.DodgerBlue;
+            this.OrdenarPrecioAsciIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.OrdenarPrecioAsciIconButton.Location = new System.Drawing.Point(524, 11);
+            this.OrdenarPrecioAsciIconButton.Margin = new System.Windows.Forms.Padding(4);
+            this.OrdenarPrecioAsciIconButton.Name = "OrdenarPrecioAsciIconButton";
+            this.OrdenarPrecioAsciIconButton.Size = new System.Drawing.Size(93, 57);
+            this.OrdenarPrecioAsciIconButton.TabIndex = 7;
+            this.OrdenarPrecioAsciIconButton.Text = " Asc";
+            this.OrdenarPrecioAsciIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.OrdenarPrecioAsciIconButton.UseVisualStyleBackColor = false;
+            // 
+            // OrdenarZAPorProductoiconButton
+            // 
+            this.OrdenarZAPorProductoiconButton.BackColor = System.Drawing.Color.Transparent;
+            this.OrdenarZAPorProductoiconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OrdenarZAPorProductoiconButton.IconChar = FontAwesome.Sharp.IconChar.SortAlphaDesc;
+            this.OrdenarZAPorProductoiconButton.IconColor = System.Drawing.Color.DodgerBlue;
+            this.OrdenarZAPorProductoiconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.OrdenarZAPorProductoiconButton.Location = new System.Drawing.Point(423, 11);
+            this.OrdenarZAPorProductoiconButton.Margin = new System.Windows.Forms.Padding(4);
+            this.OrdenarZAPorProductoiconButton.Name = "OrdenarZAPorProductoiconButton";
+            this.OrdenarZAPorProductoiconButton.Size = new System.Drawing.Size(93, 57);
+            this.OrdenarZAPorProductoiconButton.TabIndex = 8;
+            this.OrdenarZAPorProductoiconButton.Text = "Alfa Z-A";
+            this.OrdenarZAPorProductoiconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.OrdenarZAPorProductoiconButton.UseVisualStyleBackColor = false;
+            // 
+            // OredenarAZPorProductoiconButton
+            // 
+            this.OredenarAZPorProductoiconButton.BackColor = System.Drawing.Color.Transparent;
+            this.OredenarAZPorProductoiconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OredenarAZPorProductoiconButton.IconChar = FontAwesome.Sharp.IconChar.SortAlphaDown;
+            this.OredenarAZPorProductoiconButton.IconColor = System.Drawing.Color.DodgerBlue;
+            this.OredenarAZPorProductoiconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.OredenarAZPorProductoiconButton.Location = new System.Drawing.Point(625, 11);
+            this.OredenarAZPorProductoiconButton.Margin = new System.Windows.Forms.Padding(4);
+            this.OredenarAZPorProductoiconButton.Name = "OredenarAZPorProductoiconButton";
+            this.OredenarAZPorProductoiconButton.Size = new System.Drawing.Size(93, 58);
+            this.OredenarAZPorProductoiconButton.TabIndex = 9;
+            this.OredenarAZPorProductoiconButton.Text = "Alfa A-Z";
+            this.OredenarAZPorProductoiconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.OredenarAZPorProductoiconButton.UseVisualStyleBackColor = false;
+            // 
+            // FiltrariconButton
+            // 
+            this.FiltrariconButton.BackColor = System.Drawing.Color.Transparent;
+            this.FiltrariconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FiltrariconButton.IconChar = FontAwesome.Sharp.IconChar.Filter;
+            this.FiltrariconButton.IconColor = System.Drawing.Color.Blue;
+            this.FiltrariconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.FiltrariconButton.Location = new System.Drawing.Point(296, 10);
+            this.FiltrariconButton.Margin = new System.Windows.Forms.Padding(4);
+            this.FiltrariconButton.Name = "FiltrariconButton";
+            this.FiltrariconButton.Size = new System.Drawing.Size(104, 60);
+            this.FiltrariconButton.TabIndex = 5;
+            this.FiltrariconButton.Text = "Filtrar";
+            this.FiltrariconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.FiltrariconButton.UseVisualStyleBackColor = false;
             // 
             // FrmPais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(957, 450);
             this.Controls.Add(this.splitContainer1);
             this.Name = "FrmPais";
             this.Text = "FrmPais";
@@ -175,5 +265,10 @@ namespace VentaDeMiel2022.Windows
         private System.Windows.Forms.DataGridView DatosDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPais;
         private System.Windows.Forms.Button CerrarButton;
+        private FontAwesome.Sharp.IconButton PrecioDescIconButton;
+        private FontAwesome.Sharp.IconButton OrdenarPrecioAsciIconButton;
+        private FontAwesome.Sharp.IconButton OrdenarZAPorProductoiconButton;
+        private FontAwesome.Sharp.IconButton OredenarAZPorProductoiconButton;
+        private FontAwesome.Sharp.IconButton FiltrariconButton;
     }
 }

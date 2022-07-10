@@ -61,6 +61,28 @@ namespace VentaDeMiel2022.Servicio.Servicios
             throw new NotImplementedException();
         }
 
-        
+        public bool Existe(Pais pais)
+        {
+            try
+            {
+                return repositorio.Existe(pais);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public bool EstaRelacionado(Pais pais)
+        {
+            try
+            {
+                return repositorio.EstaRelacionado(pais);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

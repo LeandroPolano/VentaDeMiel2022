@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using VentaDeMiel2022.Entidades.Entidades;
 using VentaDeMiel2022.Servicio.Servicios;
 using VentaDeMiel2022.Servicio.Servicios.Facades;
+using VentaDeMiel2022.Windows.Helpers;
 
 namespace VentaDeMiel2022.Windows
 {
@@ -27,7 +28,7 @@ namespace VentaDeMiel2022.Windows
             try
             {
                 lista = servicio.GetLista();
-                MostrarDatosEnGrilla();
+                HelperForm.MostrarDatosEnGrilla(DatosDataGridView, lista);
             }
             catch (Exception exception)
             {
@@ -37,33 +38,7 @@ namespace VentaDeMiel2022.Windows
 
 
         }
-        private void MostrarDatosEnGrilla()
-        {
-            DatosDataGridView.Rows.Clear(); 
-            foreach (var pais in lista)
-            {
-                var r = ConstruirFila();
-                SetearFila(r, pais);
-                AgregarFila(r);
-            }
-
-        }
-        private void SetearFila(DataGridViewRow r, Pais pais)
-        {
-            r.Cells[colPais.Index].Value = pais.NombrePais;
-
-            r.Tag = pais;
-        }
-        private DataGridViewRow ConstruirFila()
-        {
-            var r = new DataGridViewRow();
-            r.CreateCells(DatosDataGridView);
-            return r;
-        }
-        private void AgregarFila(DataGridViewRow r)
-        {
-            DatosDataGridView.Rows.Add(r);
-        }
+       
         private void NuevoIconButton_Click(object sender, EventArgs e)
         {
             FrmPaisAE frm = new FrmPaisAE() { Text = "Agregar Paises" };
@@ -76,12 +51,19 @@ namespace VentaDeMiel2022.Windows
             try
             {
                 Pais p = frm.GetTipo();
-                servicio.Guardar(p);
-                var r = ConstruirFila();
-                SetearFila(r, p);
-                AgregarFila(r);
-                MessageBox.Show("Registro agregado", "Mensaje",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (!servicio.Existe(p))
+                {
+                    servicio.Guardar(p);
+                    var r = HelperGrid.ConstruirFila(DatosDataGridView);
+                    HelperGrid.SetearFila(r, p);
+                    HelperGrid.AgregarFila(DatosDataGridView, r);
+                    HelperMensaje.Mensaje(TipoMensaje.OK, "Registro agregado", "Mensaje");
+                }
+                else
+                {
+                    MessageBox.Show("Registro existente", "error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception exception)
             {
@@ -114,14 +96,23 @@ namespace VentaDeMiel2022.Windows
             try
             {
                 p = frm.GetTipo();
-                servicio.Guardar(p);
-                SetearFila(r, p);
-                MessageBox.Show("Registro modificado", "Mensaje",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (!servicio.Existe(p))
+                {
+                    servicio.Guardar(p);
+                    HelperGrid.SetearFila(r, p);
+                    MessageBox.Show("Registro modificado", "Mensaje",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                }
+                else
+                {
+                    HelperGrid.SetearFila(r,pAuxiliar);
+                    MessageBox.Show("Registro existente", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception exception)
             {
-                SetearFila(r,pAuxiliar);
+                HelperGrid.SetearFila(r,pAuxiliar);
                 MessageBox.Show(exception.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -148,15 +139,22 @@ namespace VentaDeMiel2022.Windows
                 {
                     return;
                 }
-                servicio.Borrar(p.PaisId);
-                DatosDataGridView.Rows.Remove(r);
-                MessageBox.Show("Registro borrado", "Mensaje",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (!servicio.EstaRelacionado(p))
+                {
+                    servicio.Borrar(p.PaisId);
+                    //DatosDataGridView.Rows.Remove(r);
+                    HelperGrid.BorrarFila(DatosDataGridView, r);
+                    HelperMensaje.Mensaje(TipoMensaje.OK, "Registro Borrado", "Mensaje");
+                }
+                else
+                {
+                    HelperMensaje.Mensaje(TipoMensaje.Error, "Registro relacionado" + Environment.NewLine +
+                                                             "Baja Denegada", "Error");
+                }
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HelperMensaje.Mensaje(TipoMensaje.Error, exception.Message, "Error");
 
             }
         }

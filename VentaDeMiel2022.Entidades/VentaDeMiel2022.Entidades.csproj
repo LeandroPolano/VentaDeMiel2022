@@ -51,11 +51,10 @@
     <Compile Include="Entidades\Provincia.cs" />
     <Compile Include="Entidades\TipoDeDocumento.cs" />
     <Compile Include="Entidades\TipoEnvase.cs" />
+    <Compile Include="Enum\Orden.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enum\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>

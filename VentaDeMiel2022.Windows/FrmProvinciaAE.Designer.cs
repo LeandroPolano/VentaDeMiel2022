@@ -30,7 +30,7 @@ namespace VentaDeMiel2022.Windows
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.PaisTextBox = new System.Windows.Forms.TextBox();
+            this.ProvinciaTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.CancelarIconButton = new System.Windows.Forms.Button();
@@ -40,14 +40,14 @@ namespace VentaDeMiel2022.Windows
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // PaisTextBox
+            // ProvinciaTextBox
             // 
-            this.PaisTextBox.Location = new System.Drawing.Point(118, 42);
-            this.PaisTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.PaisTextBox.MaxLength = 120;
-            this.PaisTextBox.Name = "PaisTextBox";
-            this.PaisTextBox.Size = new System.Drawing.Size(349, 22);
-            this.PaisTextBox.TabIndex = 10;
+            this.ProvinciaTextBox.Location = new System.Drawing.Point(118, 42);
+            this.ProvinciaTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ProvinciaTextBox.MaxLength = 120;
+            this.ProvinciaTextBox.Name = "ProvinciaTextBox";
+            this.ProvinciaTextBox.Size = new System.Drawing.Size(349, 22);
+            this.ProvinciaTextBox.TabIndex = 10;
             // 
             // label1
             // 
@@ -110,12 +110,13 @@ namespace VentaDeMiel2022.Windows
             this.ClientSize = new System.Drawing.Size(512, 272);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.PaisComboBox);
-            this.Controls.Add(this.PaisTextBox);
+            this.Controls.Add(this.ProvinciaTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CancelarIconButton);
             this.Controls.Add(this.GuardarIconButton);
             this.Name = "FrmProvinciaAE";
             this.Text = "FrmProvinciaAE";
+            this.Load += new System.EventHandler(this.FrmProvinciaAE_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -124,7 +125,7 @@ namespace VentaDeMiel2022.Windows
 
         #endregion
 
-        private System.Windows.Forms.TextBox PaisTextBox;
+        private System.Windows.Forms.TextBox ProvinciaTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button CancelarIconButton;

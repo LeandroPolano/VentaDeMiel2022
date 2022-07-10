@@ -17,5 +17,8 @@ namespace VentaDeMiel2022.Datos.Repositorio.Facade
         void Borrar(int paisId);
 
         Pais GetPaisPorId(int id);
+
+        bool Existe(Pais pais);
+        bool EstaRelacionado(Pais pais);
     }
 }

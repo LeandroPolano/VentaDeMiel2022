@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using VentaDeMiel2022.Entidades.Entidades;
 using VentaDeMiel2022.Servicio.Servicios;
 using VentaDeMiel2022.Servicio.Servicios.Facades;
+using VentaDeMiel2022.Windows.Helpers;
 
 namespace VentaDeMiel2022.Windows
 {
@@ -20,7 +21,15 @@ namespace VentaDeMiel2022.Windows
         {
             base.OnLoad(e);
             servicio = new ServicioPaises();
-            CargarDatosComboPaises(ref PaisComboBox);
+            //CargarDatosComboTipos(ref TipoProductosComboBox);
+            HelperCombos.CargarDatosComboTipos(ref PaisComboBox);
+            if (provincia != null)
+            {
+                ProvinciaTextBox.Text = provincia.NombreProvincia;
+               
+                PaisComboBox.SelectedValue = provincia.PaisId;
+
+            }
         }
 
         private void CargarDatosComboPaises(ref ComboBox paisComboBox)
@@ -44,7 +53,7 @@ namespace VentaDeMiel2022.Windows
         }
 
         private Provincia provincia;
-        public Provincia GetTipo()
+        public Provincia GetProvincia()
         {
             return provincia;
         }
@@ -56,7 +65,53 @@ namespace VentaDeMiel2022.Windows
 
         private void GuardarIconButton_Click(object sender, EventArgs e)
         {
+            if (ValidarDatos())
+            {
+                if (ValidarDatos())
+                {
+                    if (provincia == null)
+                    {
+                        provincia = new Provincia();
+                    }
 
+                    provincia.NombreProvincia = ProvinciaTextBox.Text;
+                    provincia.PaisId = ((Pais)PaisComboBox.SelectedItem).PaisId;
+                    provincia.NombrePais = (Pais)PaisComboBox.SelectedItem;
+
+
+
+
+                    DialogResult = DialogResult.OK;
+                }
+            }
+            
+        }
+        private bool ValidarDatos()
+        {
+            bool valido = true;
+            errorProvider1.Clear();
+            if (string.IsNullOrEmpty(ProvinciaTextBox.Text.Trim()))
+            {
+                valido = false;
+                errorProvider1.SetError(ProvinciaTextBox, "La descripción es requerida");
+            }
+            if (PaisComboBox.SelectedIndex == 0)
+            {
+                valido = false;
+                errorProvider1.SetError(PaisComboBox, "Debe seleccionar un Pais");
+            }
+
+            return valido;
+        }
+
+        private void FrmProvinciaAE_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void SetProvincia(Provincia provincia1)
+        {
+            this.provincia = provincia1;
         }
     }
 }
