@@ -29,8 +29,8 @@ namespace VentaDeMiel2022.Windows
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NuevoIconButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.PrecioDescIconButton = new FontAwesome.Sharp.IconButton();
@@ -53,7 +53,7 @@ namespace VentaDeMiel2022.Windows
             // 
             this.NuevoIconButton.Location = new System.Drawing.Point(12, 12);
             this.NuevoIconButton.Name = "NuevoIconButton";
-            this.NuevoIconButton.Size = new System.Drawing.Size(83, 57);
+            this.NuevoIconButton.Size = new System.Drawing.Size(83, 69);
             this.NuevoIconButton.TabIndex = 0;
             this.NuevoIconButton.Text = "Nuevo";
             this.NuevoIconButton.UseVisualStyleBackColor = true;
@@ -76,12 +76,13 @@ namespace VentaDeMiel2022.Windows
             this.splitContainer1.Panel1.Controls.Add(this.EditarIconButton);
             this.splitContainer1.Panel1.Controls.Add(this.BorrarIconButton);
             this.splitContainer1.Panel1.Controls.Add(this.NuevoIconButton);
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.DatosDataGridView);
             this.splitContainer1.Size = new System.Drawing.Size(731, 510);
-            this.splitContainer1.SplitterDistance = 116;
+            this.splitContainer1.SplitterDistance = 93;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 4;
             // 
@@ -89,7 +90,7 @@ namespace VentaDeMiel2022.Windows
             // 
             this.PrecioDescIconButton.BackColor = System.Drawing.Color.Transparent;
             this.PrecioDescIconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrecioDescIconButton.IconChar = FontAwesome.Sharp.IconChar.SortNumericDesc;
+            this.PrecioDescIconButton.IconChar = FontAwesome.Sharp.IconChar.SortAlphaDown;
             this.PrecioDescIconButton.IconColor = System.Drawing.Color.DodgerBlue;
             this.PrecioDescIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.PrecioDescIconButton.Location = new System.Drawing.Point(516, 10);
@@ -97,7 +98,7 @@ namespace VentaDeMiel2022.Windows
             this.PrecioDescIconButton.Name = "PrecioDescIconButton";
             this.PrecioDescIconButton.Size = new System.Drawing.Size(93, 71);
             this.PrecioDescIconButton.TabIndex = 11;
-            this.PrecioDescIconButton.Text = " Asc";
+            this.PrecioDescIconButton.Text = "Z-A";
             this.PrecioDescIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.PrecioDescIconButton.UseVisualStyleBackColor = false;
             this.PrecioDescIconButton.Click += new System.EventHandler(this.PrecioDescIconButton_Click);
@@ -114,7 +115,7 @@ namespace VentaDeMiel2022.Windows
             this.OredenarAZPorProductoiconButton.Name = "OredenarAZPorProductoiconButton";
             this.OredenarAZPorProductoiconButton.Size = new System.Drawing.Size(93, 71);
             this.OredenarAZPorProductoiconButton.TabIndex = 14;
-            this.OredenarAZPorProductoiconButton.Text = "Alfa A-Z";
+            this.OredenarAZPorProductoiconButton.Text = "A-Z";
             this.OredenarAZPorProductoiconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.OredenarAZPorProductoiconButton.UseVisualStyleBackColor = false;
             this.OredenarAZPorProductoiconButton.Click += new System.EventHandler(this.OredenarAZPorProductoiconButton_Click);
@@ -140,7 +141,7 @@ namespace VentaDeMiel2022.Windows
             // 
             this.CerrarButton.Location = new System.Drawing.Point(629, 10);
             this.CerrarButton.Name = "CerrarButton";
-            this.CerrarButton.Size = new System.Drawing.Size(83, 57);
+            this.CerrarButton.Size = new System.Drawing.Size(83, 71);
             this.CerrarButton.TabIndex = 3;
             this.CerrarButton.Text = "Cerrar";
             this.CerrarButton.UseVisualStyleBackColor = true;
@@ -150,7 +151,7 @@ namespace VentaDeMiel2022.Windows
             // 
             this.EditarIconButton.Location = new System.Drawing.Point(190, 12);
             this.EditarIconButton.Name = "EditarIconButton";
-            this.EditarIconButton.Size = new System.Drawing.Size(83, 57);
+            this.EditarIconButton.Size = new System.Drawing.Size(83, 69);
             this.EditarIconButton.TabIndex = 2;
             this.EditarIconButton.Text = "Editar";
             this.EditarIconButton.UseVisualStyleBackColor = true;
@@ -160,7 +161,7 @@ namespace VentaDeMiel2022.Windows
             // 
             this.BorrarIconButton.Location = new System.Drawing.Point(101, 12);
             this.BorrarIconButton.Name = "BorrarIconButton";
-            this.BorrarIconButton.Size = new System.Drawing.Size(83, 57);
+            this.BorrarIconButton.Size = new System.Drawing.Size(83, 69);
             this.BorrarIconButton.TabIndex = 1;
             this.BorrarIconButton.Text = "Borrar";
             this.BorrarIconButton.UseVisualStyleBackColor = true;
@@ -170,17 +171,17 @@ namespace VentaDeMiel2022.Windows
             // 
             this.DatosDataGridView.AllowUserToAddRows = false;
             this.DatosDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DatosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DatosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProvincia,
@@ -195,7 +196,7 @@ namespace VentaDeMiel2022.Windows
             this.DatosDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatosDataGridView.RowTemplate.Height = 28;
             this.DatosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatosDataGridView.Size = new System.Drawing.Size(731, 389);
+            this.DatosDataGridView.Size = new System.Drawing.Size(731, 412);
             this.DatosDataGridView.TabIndex = 0;
             // 
             // colProvincia
@@ -222,6 +223,8 @@ namespace VentaDeMiel2022.Windows
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 510);
             this.Controls.Add(this.splitContainer1);
+            this.MaximumSize = new System.Drawing.Size(749, 557);
+            this.MinimumSize = new System.Drawing.Size(749, 557);
             this.Name = "FrmProvincia";
             this.Text = "FrmProvincia";
             this.Load += new System.EventHandler(this.FrmProvincia_Load);

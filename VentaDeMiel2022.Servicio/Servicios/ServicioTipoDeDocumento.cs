@@ -10,19 +10,19 @@ using VentaDeMiel2022.Servicio.Servicios.Facades;
 
 namespace VentaDeMiel2022.Servicio.Servicios
 {
-    public class ServicioTipoEnvase : IServicioTipoEnvase
+    public class ServicioTipoDeDocumento:IServicioTipoDeDocumentos
     {
-        private readonly IRepositorioTipoEnvase repositorio;
+        private readonly IRepositorioTipoDeDocumento repositorio;
 
-        public ServicioTipoEnvase()
+        public ServicioTipoDeDocumento()
         {
-            repositorio = new RepositorioTipoEnvase();
+            repositorio = new RepositorioTipoDeDocumento();
         }
-        public void Guardar(TipoEnvase tipoEnvase)
+        public void Guardar(TipoDeDocumento tipoDeDocumento)
         {
             try
             {
-                repositorio.Guardar(tipoEnvase);
+                repositorio.Guardar(tipoDeDocumento);
             }
             catch (Exception e)
             {
@@ -30,7 +30,7 @@ namespace VentaDeMiel2022.Servicio.Servicios
             }
         }
 
-        public List<TipoEnvase> GetLista()
+        public List<TipoDeDocumento> GetLista()
         {
             try
             {
@@ -42,11 +42,11 @@ namespace VentaDeMiel2022.Servicio.Servicios
             }
         }
 
-        public void Borrar(int tipoEnvaseId)
+        public void Borrar(int tipoDeDocumentoId)
         {
             try
             {
-                repositorio.Borrar(tipoEnvaseId);
+                repositorio.Borrar(tipoDeDocumentoId);
             }
             catch (Exception e)
             {
@@ -54,16 +54,16 @@ namespace VentaDeMiel2022.Servicio.Servicios
             }
         }
 
-        public TipoEnvase GetTipoPorId(int id)
+        public TipoDeDocumento GetTipoPorId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public bool Existe(TipoEnvase tipoEnvase)
+        public bool Existe(TipoDeDocumento tipoDeDocumento)
         {
             try
             {
-                return repositorio.Existe(tipoEnvase);
+                return repositorio.Existe(tipoDeDocumento);
             }
             catch (Exception e)
             {
@@ -71,11 +71,11 @@ namespace VentaDeMiel2022.Servicio.Servicios
             }
         }
 
-        public bool EstaRelacionado(TipoEnvase tipoEnvase)
+        public bool EstaRelacionado(TipoDeDocumento tipoDeDocumento)
         {
             try
             {
-                return repositorio.EstaRelacionado(tipoEnvase);
+                return repositorio.EstaRelacionado(tipoDeDocumento);
             }
             catch (Exception e)
             {

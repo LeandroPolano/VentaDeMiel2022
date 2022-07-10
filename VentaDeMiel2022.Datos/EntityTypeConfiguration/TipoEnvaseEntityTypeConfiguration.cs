@@ -12,7 +12,7 @@ namespace VentaDeMiel2022.Datos.EntityTypeConfiguration
     {
         public TipoEnvaseEntityTypeConfiguration()
         {
-            ToTable("TiposEnvase");
+            ToTable("TiposEnvases");
         }
         
 

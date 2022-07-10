@@ -63,11 +63,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\Facade\IRepositorioPais.cs" />
     <Compile Include="Repositorio\Facade\IRepositorioProvincia.cs" />
+    <Compile Include="Repositorio\Facade\IRepositorioTipoDeDocumento.cs" />
     <Compile Include="Repositorio\Facade\IRepositorioTipoEnvase.cs" />
     <Compile Include="Repositorio\Facade\IRespositorioCliente.cs" />
     <Compile Include="Repositorio\RepositorioClientes.cs" />
     <Compile Include="Repositorio\RepositorioPaises.cs" />
     <Compile Include="Repositorio\RepositorioProvincia.cs" />
+    <Compile Include="Repositorio\RepositorioTipoDeDocumento.cs" />
     <Compile Include="Repositorio\RepositorioTipoEnvase.cs" />
     <Compile Include="VentaDeMiel2022DbContext.cs" />
   </ItemGroup>

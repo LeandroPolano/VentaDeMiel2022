@@ -10,11 +10,10 @@ namespace VentaDeMiel2022.Datos.Repositorio.Facade
     public interface IRepositorioTipoEnvase
     {
         void Guardar(TipoEnvase tipoEnvase);
-
         List<TipoEnvase> GetLista();
-
         void Borrar(int tipoEnvaseId);
-
-        TipoEnvase GetTipoEnvasePorId(int id);
+        TipoEnvase GetTipoPorId(int id);
+        bool Existe(TipoEnvase tipoEnvase);
+        bool EstaRelacionado(TipoEnvase tipoEnvase);
     }
 }

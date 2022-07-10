@@ -60,5 +60,11 @@ namespace VentaDeMiel2022.Windows
             FrmProvincia frm = new FrmProvincia() { Text = "Provincias" };
             DialogResult dr = frm.ShowDialog(this);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FrmTiposDeDocumentos frm = new FrmTiposDeDocumentos() { Text = "Tipo De Documento" };
+            DialogResult dr = frm.ShowDialog(this);
+        }
     }
 }

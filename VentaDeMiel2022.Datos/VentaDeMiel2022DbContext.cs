@@ -33,7 +33,7 @@ namespace VentaDeMiel2022.Datos
         public DbSet<Proveedor> Proveedores { get; set; }
         public DbSet<Provincia> Provincias { get; set; }
         public DbSet<TipoDeDocumento> TipoDeDocumentos { get; set; }
-        public DbSet<TipoEnvase> TipoEnvases { get; set; }
+        public DbSet<TipoEnvase> TiposEnvases { get; set; }
 
 
 

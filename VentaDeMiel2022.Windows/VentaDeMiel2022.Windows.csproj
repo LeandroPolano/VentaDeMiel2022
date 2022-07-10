@@ -111,11 +111,29 @@
     <Compile Include="FrmProvinciaAE.Designer.cs">
       <DependentUpon>FrmProvinciaAE.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTipoEnvaseAE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTipoEnvaseAE.Designer.cs">
+      <DependentUpon>FrmTipoEnvaseAE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTiposDeDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposDeDocumentos.Designer.cs">
+      <DependentUpon>FrmTiposDeDocumentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVentas.Designer.cs">
       <DependentUpon>frmVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTiposDeDocumentosAE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposDeDocumentosAE.Designer.cs">
+      <DependentUpon>FrmTiposDeDocumentosAE.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\HelperCombos.cs" />
     <Compile Include="Helpers\HelperForm.cs" />
@@ -154,8 +172,17 @@
     <EmbeddedResource Include="FrmProvinciaAE.resx">
       <DependentUpon>FrmProvinciaAE.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmTipoEnvaseAE.resx">
+      <DependentUpon>FrmTipoEnvaseAE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposDeDocumentos.resx">
+      <DependentUpon>FrmTiposDeDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposDeDocumentosAE.resx">
+      <DependentUpon>FrmTiposDeDocumentosAE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

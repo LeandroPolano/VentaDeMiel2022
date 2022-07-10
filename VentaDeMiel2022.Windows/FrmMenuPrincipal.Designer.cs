@@ -69,7 +69,7 @@ namespace VentaDeMiel2022.Windows
             this.splitContainer1.Panel2.Controls.Add(this.ClientesButton);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(683, 506);
-            this.splitContainer1.SplitterDistance = 98;
+            this.splitContainer1.SplitterDistance = 66;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -117,7 +117,7 @@ namespace VentaDeMiel2022.Windows
             this.button5.Font = new System.Drawing.Font("Open Sans", 10.2F);
             this.button5.Location = new System.Drawing.Point(452, 144);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(161, 55);
+            this.button5.Size = new System.Drawing.Size(161, 68);
             this.button5.TabIndex = 5;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
@@ -127,17 +127,18 @@ namespace VentaDeMiel2022.Windows
             this.button6.Font = new System.Drawing.Font("Open Sans", 10.2F);
             this.button6.Location = new System.Drawing.Point(258, 144);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(161, 55);
+            this.button6.Size = new System.Drawing.Size(161, 68);
             this.button6.TabIndex = 4;
-            this.button6.Text = "button6";
+            this.button6.Text = "Tipo De Documento";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // ProvinciaButton
             // 
             this.ProvinciaButton.Font = new System.Drawing.Font("Open Sans", 10.2F);
             this.ProvinciaButton.Location = new System.Drawing.Point(64, 144);
             this.ProvinciaButton.Name = "ProvinciaButton";
-            this.ProvinciaButton.Size = new System.Drawing.Size(161, 55);
+            this.ProvinciaButton.Size = new System.Drawing.Size(161, 68);
             this.ProvinciaButton.TabIndex = 3;
             this.ProvinciaButton.Text = "Provincia";
             this.ProvinciaButton.UseVisualStyleBackColor = true;

@@ -31,22 +31,6 @@ namespace VentaDeMiel2022.Windows
 
             }
         }
-
-        private void CargarDatosComboPaises(ref ComboBox paisComboBox)
-        {
-            var lista = servicio.GetLista();
-            Pais pDefault = new Pais()
-            {
-                PaisId = 0,
-                NombrePais = "Seleccione Pais"
-            };
-            lista.Insert(0, pDefault);
-            paisComboBox.DataSource = lista;
-            paisComboBox.DisplayMember = "NombrePais";
-            paisComboBox.ValueMember = "PaisId";
-            paisComboBox.SelectedIndex = 0;
-        }
-
         public FrmProvinciaAE()
         {
             InitializeComponent();

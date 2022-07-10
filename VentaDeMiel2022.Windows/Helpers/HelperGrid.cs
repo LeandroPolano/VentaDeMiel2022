@@ -40,6 +40,12 @@ namespace VentaDeMiel2022.Windows.Helpers
                 case Pais tp:
                     r.Cells[0].Value = ((Pais)obj).NombrePais;
                     break;
+                case TipoEnvase te:
+                    r.Cells[0].Value = ((TipoEnvase)obj).Descripcion;
+                    break;
+                case TipoDeDocumento td:
+                    r.Cells[0].Value = ((TipoDeDocumento)obj).Descripcion;
+                    break;
                 case Provincia p:
                     r.Cells[0].Value = ((Provincia)obj).NombreProvincia;
                     r.Cells[1].Value = ((Provincia)obj).NombrePais.NombrePais;

@@ -14,32 +14,18 @@ using VentaDeMiel2022.Windows.Helpers;
 
 namespace VentaDeMiel2022.Windows
 {
-    public partial class FrmTipoEnvase : Form
+    public partial class FrmTiposDeDocumentos : Form
     {
-        public FrmTipoEnvase()
+        public FrmTiposDeDocumentos()
         {
             InitializeComponent();
         }
-        private IServicioTipoEnvase servicio;
-        private List<TipoEnvase> lista;
-        private void TipoEnvase_Load(object sender, EventArgs e)
-        {
-            servicio = new ServicioTipoEnvase();
-            try
-            {
-                lista = servicio.GetLista();
-                HelperForm.MostrarDatosEnGrilla(dataGridView1, lista);
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception);
-                throw;
-            }
+        private IServicioTipoDeDocumentos servicio;
+        private List<TipoDeDocumento> lista;
 
-        }
         private void NuevoButton_Click(object sender, EventArgs e)
         {
-            FrmTipoEnvaseAE frm = new FrmTipoEnvaseAE() { Text = "Agregar TipoEnvases" };
+            FrmTiposDeDocumentosAE frm = new FrmTiposDeDocumentosAE() { Text = "Agregar Tipo De Documento" };
             DialogResult dr = frm.ShowDialog(this);
             if (dr == DialogResult.Cancel)
             {
@@ -48,7 +34,7 @@ namespace VentaDeMiel2022.Windows
 
             try
             {
-                TipoEnvase p = frm.GetTipo();
+                TipoDeDocumento p = frm.GetTipo();
                 if (!servicio.Existe(p))
                 {
                     servicio.Guardar(p);
@@ -68,14 +54,6 @@ namespace VentaDeMiel2022.Windows
                 MessageBox.Show(exception.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-        }
-
-
-
-        private void CerrarButton_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void BorrarButton_Click(object sender, EventArgs e)
@@ -88,7 +66,7 @@ namespace VentaDeMiel2022.Windows
             try
             {
                 var r = dataGridView1.SelectedRows[0];
-                TipoEnvase t = (TipoEnvase)r.Tag;
+                TipoDeDocumento t = (TipoDeDocumento)r.Tag;
                 DialogResult dr = MessageBox.Show("¿Desea borrar el registro seleccionado?",
                     "Confirmar",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question,
@@ -97,12 +75,12 @@ namespace VentaDeMiel2022.Windows
                 {
                     return;
                 }
-                
-                servicio.Borrar(t.TipoEnvaseId);
-                HelperGrid.BorrarFila(dataGridView1, r); 
+
+                servicio.Borrar(t.TipoDeDocumentoId);
+                HelperGrid.BorrarFila(dataGridView1, r);
                 HelperMensaje.Mensaje(TipoMensaje.OK, "Registro Borrado", "Mensaje");
 
-               
+
             }
             catch (Exception exception)
             {
@@ -119,9 +97,9 @@ namespace VentaDeMiel2022.Windows
             }
 
             var r = dataGridView1.SelectedRows[0];
-            TipoEnvase t = (TipoEnvase)r.Tag;
-            TipoEnvase tAuxiliar = (TipoEnvase)t.Clone();
-            FrmTipoEnvaseAE frm = new FrmTipoEnvaseAE() { Text = "Editar tipo de Envase" };
+            TipoDeDocumento t = (TipoDeDocumento)r.Tag;
+            TipoDeDocumento tAuxiliar = (TipoDeDocumento)t.Clone();
+            FrmTiposDeDocumentosAE frm = new FrmTiposDeDocumentosAE() { Text = "Editar tipo de Documento" };
             frm.SetTipo(t);
             DialogResult dr = frm.ShowDialog(this);
             if (dr == DialogResult.Cancel)
@@ -153,6 +131,26 @@ namespace VentaDeMiel2022.Windows
                 HelperGrid.SetearFila(r, tAuxiliar);
                 MessageBox.Show(exception.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CerrarButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void FrmTiposDeDocumentos_Load(object sender, EventArgs e)
+        {
+            servicio = new ServicioTipoDeDocumento();
+            try
+            {
+                lista = servicio.GetLista();
+                HelperForm.MostrarDatosEnGrilla(dataGridView1, lista);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
             }
         }
     }
