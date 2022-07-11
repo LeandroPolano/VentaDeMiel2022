@@ -43,13 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servicios\Facades\IServicioCliente.cs" />
+    <Compile Include="Servicios\Facades\IServicioClientes.cs" />
     <Compile Include="Servicios\Facades\IServicioLocalidad.cs" />
     <Compile Include="Servicios\Facades\IServicioPais.cs" />
     <Compile Include="Servicios\Facades\IServicioProvincia.cs" />
     <Compile Include="Servicios\Facades\IServicioTipoDeDocumentos.cs" />
     <Compile Include="Servicios\Facades\IServicioTipoEnvase.cs" />
-    <Compile Include="Servicios\ServicioClientes.cs" />
+    <Compile Include="Servicios\ServicioCliente.cs" />
     <Compile Include="Servicios\ServicioLocalidad.cs" />
     <Compile Include="Servicios\ServicioPaises.cs" />
     <Compile Include="Servicios\ServicioProvincia.cs" />

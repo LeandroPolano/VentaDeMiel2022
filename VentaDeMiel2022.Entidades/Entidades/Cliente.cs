@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VentaDeMiel2022.Entidades.Entidades
 {
-    public class Cliente
+    public class Cliente :ICloneable
     {
         public int ClienteId { get; set; }
 
@@ -29,13 +29,16 @@ namespace VentaDeMiel2022.Entidades.Entidades
 
 
 
-        public virtual TipoDeDocumento TipoDeDocumento { get; set; }
-        public virtual Localidad Localidad { get; set; }
-        public virtual Provincia Provincia { get; set; }
-        public virtual Pais Pais { get; set; }
+        public TipoDeDocumento TipoDeDocumento { get; set; }
+        public Localidad NombreLocalidad { get; set; }
+        public Provincia NombreProvincia { get; set; }
+        public Pais NombrePais { get; set; }
 
 
-
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
 
     }
 }

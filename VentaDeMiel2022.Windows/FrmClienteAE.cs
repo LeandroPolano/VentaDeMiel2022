@@ -16,5 +16,15 @@ namespace VentaDeMiel2022.Windows
         {
             InitializeComponent();
         }
+
+        private void GuardarIconButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CancelarIconButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

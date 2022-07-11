@@ -242,5 +242,11 @@ namespace VentaDeMiel2022.Windows
             }
         }
 
+        private void CerrarButton_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        
     }
 }

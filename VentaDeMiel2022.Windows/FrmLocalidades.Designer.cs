@@ -29,8 +29,8 @@ namespace VentaDeMiel2022.Windows
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NuevoIconButton = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.PrecioDescIconButton = new FontAwesome.Sharp.IconButton();
@@ -51,7 +51,7 @@ namespace VentaDeMiel2022.Windows
             // 
             // NuevoIconButton
             // 
-            this.NuevoIconButton.Location = new System.Drawing.Point(12, 12);
+            this.NuevoIconButton.Location = new System.Drawing.Point(6, 10);
             this.NuevoIconButton.Name = "NuevoIconButton";
             this.NuevoIconButton.Size = new System.Drawing.Size(83, 69);
             this.NuevoIconButton.TabIndex = 0;
@@ -80,10 +80,10 @@ namespace VentaDeMiel2022.Windows
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.DatosDataGridView);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 82;
+            this.splitContainer1.Size = new System.Drawing.Size(1053, 498);
+            this.splitContainer1.SplitterDistance = 90;
             this.splitContainer1.SplitterWidth = 5;
-            this.splitContainer1.TabIndex = 5;
+            this.splitContainer1.TabIndex = 6;
             // 
             // PrecioDescIconButton
             // 
@@ -92,7 +92,7 @@ namespace VentaDeMiel2022.Windows
             this.PrecioDescIconButton.IconChar = FontAwesome.Sharp.IconChar.SortAlphaDown;
             this.PrecioDescIconButton.IconColor = System.Drawing.Color.DodgerBlue;
             this.PrecioDescIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.PrecioDescIconButton.Location = new System.Drawing.Point(605, 9);
+            this.PrecioDescIconButton.Location = new System.Drawing.Point(485, 12);
             this.PrecioDescIconButton.Margin = new System.Windows.Forms.Padding(4);
             this.PrecioDescIconButton.Name = "PrecioDescIconButton";
             this.PrecioDescIconButton.Size = new System.Drawing.Size(93, 71);
@@ -109,7 +109,7 @@ namespace VentaDeMiel2022.Windows
             this.OredenarAZPorProductoiconButton.IconChar = FontAwesome.Sharp.IconChar.SortAlphaDown;
             this.OredenarAZPorProductoiconButton.IconColor = System.Drawing.Color.DodgerBlue;
             this.OredenarAZPorProductoiconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.OredenarAZPorProductoiconButton.Location = new System.Drawing.Point(504, 9);
+            this.OredenarAZPorProductoiconButton.Location = new System.Drawing.Point(384, 12);
             this.OredenarAZPorProductoiconButton.Margin = new System.Windows.Forms.Padding(4);
             this.OredenarAZPorProductoiconButton.Name = "OredenarAZPorProductoiconButton";
             this.OredenarAZPorProductoiconButton.Size = new System.Drawing.Size(93, 71);
@@ -126,7 +126,7 @@ namespace VentaDeMiel2022.Windows
             this.FiltrariconButton.IconChar = FontAwesome.Sharp.IconChar.Filter;
             this.FiltrariconButton.IconColor = System.Drawing.Color.Blue;
             this.FiltrariconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.FiltrariconButton.Location = new System.Drawing.Point(392, 9);
+            this.FiltrariconButton.Location = new System.Drawing.Point(272, 11);
             this.FiltrariconButton.Margin = new System.Windows.Forms.Padding(4);
             this.FiltrariconButton.Name = "FiltrariconButton";
             this.FiltrariconButton.Size = new System.Drawing.Size(104, 72);
@@ -138,17 +138,17 @@ namespace VentaDeMiel2022.Windows
             // 
             // CerrarButton
             // 
-            this.CerrarButton.Location = new System.Drawing.Point(705, 9);
+            this.CerrarButton.Location = new System.Drawing.Point(962, 10);
             this.CerrarButton.Name = "CerrarButton";
             this.CerrarButton.Size = new System.Drawing.Size(83, 71);
             this.CerrarButton.TabIndex = 3;
             this.CerrarButton.Text = "Cerrar";
             this.CerrarButton.UseVisualStyleBackColor = true;
-            this.CerrarButton.Click += new System.EventHandler(this.CerrarButton_Click);
+            this.CerrarButton.Click += new System.EventHandler(this.CerrarButton_Click_1);
             // 
             // EditarIconButton
             // 
-            this.EditarIconButton.Location = new System.Drawing.Point(190, 12);
+            this.EditarIconButton.Location = new System.Drawing.Point(184, 10);
             this.EditarIconButton.Name = "EditarIconButton";
             this.EditarIconButton.Size = new System.Drawing.Size(83, 69);
             this.EditarIconButton.TabIndex = 2;
@@ -158,7 +158,7 @@ namespace VentaDeMiel2022.Windows
             // 
             // BorrarIconButton
             // 
-            this.BorrarIconButton.Location = new System.Drawing.Point(101, 12);
+            this.BorrarIconButton.Location = new System.Drawing.Point(95, 10);
             this.BorrarIconButton.Name = "BorrarIconButton";
             this.BorrarIconButton.Size = new System.Drawing.Size(83, 69);
             this.BorrarIconButton.TabIndex = 1;
@@ -170,17 +170,17 @@ namespace VentaDeMiel2022.Windows
             // 
             this.DatosDataGridView.AllowUserToAddRows = false;
             this.DatosDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DatosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DatosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colLocalidad,
@@ -195,7 +195,7 @@ namespace VentaDeMiel2022.Windows
             this.DatosDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatosDataGridView.RowTemplate.Height = 28;
             this.DatosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatosDataGridView.Size = new System.Drawing.Size(800, 363);
+            this.DatosDataGridView.Size = new System.Drawing.Size(1053, 403);
             this.DatosDataGridView.TabIndex = 0;
             // 
             // colLocalidad
@@ -218,9 +218,8 @@ namespace VentaDeMiel2022.Windows
             // 
             // FrmLocalidades
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1053, 498);
             this.Controls.Add(this.splitContainer1);
             this.Name = "FrmLocalidades";
             this.Text = "FrmLocalidades";
