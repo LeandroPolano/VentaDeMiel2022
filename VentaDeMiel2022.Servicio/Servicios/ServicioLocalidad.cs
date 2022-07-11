@@ -11,19 +11,19 @@ using VentaDeMiel2022.Servicio.Servicios.Facades;
 
 namespace VentaDeMiel2022.Servicio.Servicios
 {
-    public class ServicioProvincia:IServicioProvincia
+    public class ServicioLocalidad:IServicioLocalidad
     {
-        private readonly IRepositorioProvincia repositorio;
+        private readonly IRepositorioLocalidad repositorio;
 
-        public ServicioProvincia()
+        public ServicioLocalidad()
         {
-            repositorio = new RepositorioProvincia();
+            repositorio = new RepositorioLocalidades();
         }
-        public void Guardar(Provincia provincia)
+        public void Guardar(Localidad localidad)
         {
             try
             {
-                repositorio.Guardar(provincia);
+                repositorio.Guardar(localidad);
             }
             catch (Exception e)
             {
@@ -31,13 +31,11 @@ namespace VentaDeMiel2022.Servicio.Servicios
             }
         }
 
-       
-
-        public List<Provincia> GetLista(Pais p, Orden orden)
+        public List<Localidad> GetLista(Provincia pr, Orden orden)
         {
             try
             {
-                return repositorio.GetLista(p,orden);
+                return repositorio.GetLista(pr, orden);
             }
             catch (Exception e)
             {
@@ -45,11 +43,11 @@ namespace VentaDeMiel2022.Servicio.Servicios
             }
         }
 
-        public void Borrar(int provinciaId)
+        public void Borrar(int localidadID)
         {
             try
             {
-                repositorio.Borrar(provinciaId);
+                repositorio.Borrar(localidadID);
             }
             catch (Exception e)
             {
@@ -57,16 +55,16 @@ namespace VentaDeMiel2022.Servicio.Servicios
             }
         }
 
-        public Provincia GetProvinciaPorId(int id)
+        public Localidad GetLocalidadPorId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public bool Existe(Provincia provincia)
+        public bool Existe(Localidad localidad)
         {
             try
             {
-                return repositorio.Existe(provincia);
+                return repositorio.Existe(localidad);
             }
             catch (Exception e)
             {
@@ -74,25 +72,11 @@ namespace VentaDeMiel2022.Servicio.Servicios
             }
         }
 
-        public bool EstaRelacionado(Provincia provincia)
+        public bool EstaRelacionado(Localidad localidad)
         {
             try
             {
-                return repositorio.EstaRelacionado(provincia);
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-        }
-
-        public Pais p;
-        public Orden orden;
-        public List<Provincia> GetLista()
-        {
-            try
-            {
-                return repositorio.GetLista(p,orden);
+                return repositorio.EstaRelacionado(localidad);
             }
             catch (Exception e)
             {

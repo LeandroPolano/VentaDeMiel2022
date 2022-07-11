@@ -69,6 +69,12 @@
     <Compile Include="FrmBuscarPorPais.Designer.cs">
       <DependentUpon>FrmBuscarPorPais.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBuscarPorProvincia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarPorProvincia.Designer.cs">
+      <DependentUpon>FrmBuscarPorProvincia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmClienteAE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,18 @@
     </Compile>
     <Compile Include="FrmClientes.Designer.cs">
       <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLocalidadAE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLocalidadAE.Designer.cs">
+      <DependentUpon>FrmLocalidadAE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLocalidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLocalidades.Designer.cs">
+      <DependentUpon>FrmLocalidades.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -151,11 +169,20 @@
     <EmbeddedResource Include="FrmBuscarPorPais.resx">
       <DependentUpon>FrmBuscarPorPais.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarPorProvincia.resx">
+      <DependentUpon>FrmBuscarPorProvincia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmClienteAE.resx">
       <DependentUpon>FrmClienteAE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmClientes.resx">
       <DependentUpon>FrmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLocalidadAE.resx">
+      <DependentUpon>FrmLocalidadAE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLocalidades.resx">
+      <DependentUpon>FrmLocalidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
@@ -212,6 +239,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\VentaDeMiel2022.Datos\VentaDeMiel2022.Datos.csproj">
+      <Project>{93D53F62-7BDB-41D0-BD40-E57C73185B46}</Project>
+      <Name>VentaDeMiel2022.Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VentaDeMiel2022.Entidades\VentaDeMiel2022.Entidades.csproj">
       <Project>{7b5b84ce-1426-4b91-84a1-a48a83aca4e5}</Project>
       <Name>VentaDeMiel2022.Entidades</Name>

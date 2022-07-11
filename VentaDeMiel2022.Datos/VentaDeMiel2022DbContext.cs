@@ -28,7 +28,7 @@ namespace VentaDeMiel2022.Datos
         }
 
         public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<Localidad> Localidad { get; set; }
+        public DbSet<Localidad> Localidades { get; set; }
         public DbSet<Pais> Paises { get; set; }
         public DbSet<Proveedor> Proveedores { get; set; }
         public DbSet<Provincia> Provincias { get; set; }

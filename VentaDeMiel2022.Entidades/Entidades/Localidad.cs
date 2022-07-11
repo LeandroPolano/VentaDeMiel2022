@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace VentaDeMiel2022.Entidades.Entidades
 {
-    public class Localidad
+    public class Localidad : ICloneable
+
     {
         public int LocalidadId { get; set; }
 
@@ -15,6 +16,10 @@ namespace VentaDeMiel2022.Entidades.Entidades
 
         public int ProvinciaId { get; set; }
 
-        public Provincia Provincia { get; set; }
+        public Provincia NombreProvincia { get; set; }
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

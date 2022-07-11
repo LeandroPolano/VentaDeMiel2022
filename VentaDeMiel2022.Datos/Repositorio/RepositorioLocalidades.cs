@@ -7,43 +7,43 @@ using System.Threading.Tasks;
 using VentaDeMiel2022.Datos.Repositorio.Facade;
 using VentaDeMiel2022.Entidades.Entidades;
 using VentaDeMiel2022.Entidades.Enum;
+using EntityState = System.Data.Entity.EntityState;
 
 namespace VentaDeMiel2022.Datos.Repositorio
 {
-    public class RepositorioProvincia:IRepositorioProvincia
+    public class RepositorioLocalidades:IRepositorioLocalidad
     {
         private readonly VentaDeMiel2022DbContext context;
 
-        public RepositorioProvincia()
+        public RepositorioLocalidades()
         {
             context = new VentaDeMiel2022DbContext();
         }
-
-        public void Guardar(Provincia provincia)
+        public void Guardar(Localidad localidad)
         {
             try
             {
-                if (provincia.NombrePais!=null)
+                if (localidad.NombreProvincia != null)
                 {
-                    context.Paises.Attach(provincia.NombrePais);
+                    context.Provincias.Attach(localidad.NombreProvincia);
                 }
-                if (provincia.ProvinciaId==0)
+                if (localidad.LocalidadId == 0)
                 {
-                    context.Provincias.Add(provincia);
+                    context.Localidades.Add(localidad);
                 }
                 else
                 {
-                    var provinciaInDb = context.Provincias.SingleOrDefault(p => p.ProvinciaId == provincia.ProvinciaId);
-                    if (provinciaInDb==null)
+                    var LocalidadesInDb = context.Localidades.SingleOrDefault(p => p.LocalidadId == localidad.LocalidadId);
+                    if (LocalidadesInDb == null)
                     {
-                        throw new Exception("Código de provincia inexistente...");
+                        throw new Exception("Código de localidad inexistente");
                     }
 
-                    provinciaInDb.NombreProvincia = provincia.NombreProvincia;
-                    provinciaInDb.PaisId = provincia.PaisId;
-                   
+                    LocalidadesInDb.NombreLocalidad = localidad.NombreLocalidad;
+                    LocalidadesInDb.ProvinciaId = localidad.ProvinciaId;
 
-                    context.Entry(provinciaInDb).State = EntityState.Modified;
+
+                    context.Entry(LocalidadesInDb).State = EntityState.Modified;
 
                 }
 
@@ -53,20 +53,17 @@ namespace VentaDeMiel2022.Datos.Repositorio
             {
                 throw new Exception(e.Message);
             }
-        
         }
 
-      
-
-        public List<Provincia> GetLista(Pais p = null, Orden orden = Orden.BD)
+        public List<Localidad> GetLista(Provincia p = null, Orden orden=Orden.BD)
         {
             try
             {
-                var query = context.Provincias
-                    .Include(p => p.NombrePais);
+                var query = context.Localidades
+                    .Include(p => p.NombreProvincia);
                 if (p != null)
                 {
-                    query = query.Where(p => p.PaisId == p.PaisId);
+                    query = query.Where(p => p.ProvinciaId == p.ProvinciaId);
                 }
 
                 switch (orden)
@@ -74,12 +71,12 @@ namespace VentaDeMiel2022.Datos.Repositorio
                     case Orden.BD:
                         break;
                     case Orden.AZ:
-                        query = query.OrderBy(p => p.NombreProvincia);
+                        query = query.OrderBy(p => p.NombreLocalidad);
                         break;
                     case Orden.ZA:
-                        query = query.OrderByDescending(p => p.NombreProvincia);
+                        query = query.OrderByDescending(p => p.NombreLocalidad);
                         break;
-                  
+
                     default:
                         throw new ArgumentOutOfRangeException(nameof(orden), orden, null);
                 }
@@ -93,17 +90,17 @@ namespace VentaDeMiel2022.Datos.Repositorio
             }
         }
 
-        public void Borrar(int provinciaId)
+        public void Borrar(int localidadID)
         {
             try
             {
-                var provinciaInDb = context.Provincias.SingleOrDefault(p => p.ProvinciaId == provinciaId);
-                if (provinciaInDb == null)
+                var localidadInDb = context.Localidades.SingleOrDefault(p => p.LocalidadId == localidadID);
+                if (localidadInDb == null)
                 {
-                    throw new Exception("Código de provincia inexistente");
+                    throw new Exception("Código de localidad inexistente");
                 }
 
-                context.Entry(provinciaInDb).State = EntityState.Deleted;
+                context.Entry(localidadInDb).State = EntityState.Deleted;
                 context.SaveChanges();
             }
             catch (Exception e)
@@ -112,22 +109,22 @@ namespace VentaDeMiel2022.Datos.Repositorio
             }
         }
 
-        public Provincia GetProvinciaPorId(int id)
+        public Localidad GetLocalidadPorId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public bool Existe(Provincia provincia)
+        public bool Existe(Localidad localidad)
         {
             try
             {
-                if (provincia.ProvinciaId == 0)
+                if (localidad.LocalidadId == 0)
                 {
-                    return context.Provincias
-                        .Any(p => p.NombreProvincia == provincia.NombreProvincia);
+                    return context.Localidades
+                        .Any(p => p.NombreLocalidad == localidad.NombreLocalidad);
                 }
-                return context.Provincias.Any(p => p.NombreProvincia == provincia.NombreProvincia &&
-                                                  p.ProvinciaId != provincia.ProvinciaId);
+                return context.Localidades.Any(p => p.NombreLocalidad == localidad.NombreLocalidad &&
+                                                   p.LocalidadId != localidad.LocalidadId);
             }
             catch (Exception e)
             {
@@ -135,12 +132,12 @@ namespace VentaDeMiel2022.Datos.Repositorio
             }
         }
 
-        public bool EstaRelacionado(Provincia provincia)
+        public bool EstaRelacionado(Localidad localidad)
         {
             try
             {
                 return context.Localidades
-                    .Any(dt => dt.ProvinciaId == provincia.ProvinciaId);
+                    .Any(dt => dt.LocalidadId == localidad.LocalidadId);
             }
             catch (Exception e)
             {
@@ -148,6 +145,4 @@ namespace VentaDeMiel2022.Datos.Repositorio
             }
         }
     }
-
-   
 }

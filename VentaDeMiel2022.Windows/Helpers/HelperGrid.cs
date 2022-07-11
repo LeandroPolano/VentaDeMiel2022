@@ -49,7 +49,10 @@ namespace VentaDeMiel2022.Windows.Helpers
                 case Provincia p:
                     r.Cells[0].Value = ((Provincia)obj).NombreProvincia;
                     r.Cells[1].Value = ((Provincia)obj).NombrePais.NombrePais;
-
+                    break;
+                case Localidad L:
+                    r.Cells[0].Value = ((Localidad)obj).NombreLocalidad;
+                    r.Cells[1].Value = ((Localidad)obj).NombreProvincia.NombreProvincia;
                     break;
 
 

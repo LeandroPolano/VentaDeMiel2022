@@ -66,5 +66,11 @@ namespace VentaDeMiel2022.Windows
             FrmTiposDeDocumentos frm = new FrmTiposDeDocumentos() { Text = "Tipo De Documento" };
             DialogResult dr = frm.ShowDialog(this);
         }
+
+        private void LocalidadButton_Click(object sender, EventArgs e)
+        {
+            FrmLocalidades frm = new FrmLocalidades() { Text = "Localidades" };
+            DialogResult dr = frm.ShowDialog(this);
+        }
     }
 }

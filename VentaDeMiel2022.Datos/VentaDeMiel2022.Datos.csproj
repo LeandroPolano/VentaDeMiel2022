@@ -61,12 +61,14 @@
     <Compile Include="EntityTypeConfiguration\TipoDeDocumentoEntityTypeConfiguration.cs" />
     <Compile Include="EntityTypeConfiguration\TipoEnvaseEntityTypeConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\Facade\IRepositorioLocalidad.cs" />
     <Compile Include="Repositorio\Facade\IRepositorioPais.cs" />
     <Compile Include="Repositorio\Facade\IRepositorioProvincia.cs" />
     <Compile Include="Repositorio\Facade\IRepositorioTipoDeDocumento.cs" />
     <Compile Include="Repositorio\Facade\IRepositorioTipoEnvase.cs" />
     <Compile Include="Repositorio\Facade\IRespositorioCliente.cs" />
     <Compile Include="Repositorio\RepositorioClientes.cs" />
+    <Compile Include="Repositorio\RepositorioLocalidades.cs" />
     <Compile Include="Repositorio\RepositorioPaises.cs" />
     <Compile Include="Repositorio\RepositorioProvincia.cs" />
     <Compile Include="Repositorio\RepositorioTipoDeDocumento.cs" />

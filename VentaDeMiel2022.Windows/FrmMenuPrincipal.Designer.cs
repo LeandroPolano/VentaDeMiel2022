@@ -33,7 +33,7 @@ namespace VentaDeMiel2022.Windows
             this.label1 = new System.Windows.Forms.Label();
             this.CerrarButton = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.LocalidadButton = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.ProvinciaButton = new System.Windows.Forms.Button();
             this.TipoEnvaseButton = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@ namespace VentaDeMiel2022.Windows
             // 
             this.splitContainer1.Panel2.Controls.Add(this.CerrarButton);
             this.splitContainer1.Panel2.Controls.Add(this.button7);
-            this.splitContainer1.Panel2.Controls.Add(this.button5);
+            this.splitContainer1.Panel2.Controls.Add(this.LocalidadButton);
             this.splitContainer1.Panel2.Controls.Add(this.button6);
             this.splitContainer1.Panel2.Controls.Add(this.ProvinciaButton);
             this.splitContainer1.Panel2.Controls.Add(this.TipoEnvaseButton);
@@ -112,15 +112,16 @@ namespace VentaDeMiel2022.Windows
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // LocalidadButton
             // 
-            this.button5.Font = new System.Drawing.Font("Open Sans", 10.2F);
-            this.button5.Location = new System.Drawing.Point(452, 144);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(161, 68);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.LocalidadButton.Font = new System.Drawing.Font("Open Sans", 10.2F);
+            this.LocalidadButton.Location = new System.Drawing.Point(452, 144);
+            this.LocalidadButton.Name = "LocalidadButton";
+            this.LocalidadButton.Size = new System.Drawing.Size(161, 68);
+            this.LocalidadButton.TabIndex = 5;
+            this.LocalidadButton.Text = "Localidades";
+            this.LocalidadButton.UseVisualStyleBackColor = true;
+            this.LocalidadButton.Click += new System.EventHandler(this.LocalidadButton_Click);
             // 
             // button6
             // 
@@ -205,7 +206,7 @@ namespace VentaDeMiel2022.Windows
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button LocalidadButton;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button ProvinciaButton;
         private System.Windows.Forms.Button TipoEnvaseButton;
