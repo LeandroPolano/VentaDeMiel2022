@@ -22,7 +22,7 @@ namespace VentaDeMiel2022.Windows
             base.OnLoad(e);
             servicio = new ServicioPaises();
             //CargarDatosComboTipos(ref TipoProductosComboBox);
-            HelperCombos.CargarDatosComboTipos(ref PaisComboBox);
+            HelperCombos.CargarDatosComboPais(ref PaisComboBox);
             if (provincia != null)
             {
                 ProvinciaTextBox.Text = provincia.NombreProvincia;

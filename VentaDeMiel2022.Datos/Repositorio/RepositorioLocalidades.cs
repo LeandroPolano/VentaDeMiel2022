@@ -54,7 +54,6 @@ namespace VentaDeMiel2022.Datos.Repositorio
                 throw new Exception(e.Message);
             }
         }
-
         public List<Localidad> GetLista(Provincia p = null, Orden orden=Orden.BD)
         {
             try

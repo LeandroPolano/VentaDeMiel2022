@@ -83,5 +83,19 @@ namespace VentaDeMiel2022.Servicio.Servicios
                 throw new Exception(e.Message);
             }
         }
+
+        public Provincia pr;
+        public Orden orden;
+        public List<Localidad> GetLista()
+        {
+            try
+            {
+                return repositorio.GetLista(pr, orden);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

@@ -54,8 +54,19 @@ namespace VentaDeMiel2022.Windows.Helpers
                     r.Cells[0].Value = ((Localidad)obj).NombreLocalidad;
                     r.Cells[1].Value = ((Localidad)obj).NombreProvincia.NombreProvincia;
                     break;
-
-
+                case Cliente CL :
+                    r.Cells[0].Value = ((Cliente)obj).Nombre;
+                    r.Cells[1].Value = ((Cliente)obj).Apellido;
+                    r.Cells[2].Value = ((Cliente)obj).TipoDeDocumento.Descripcion;
+                    r.Cells[3].Value = ((Cliente)obj).NroDocumento;
+                    r.Cells[4].Value = ((Cliente)obj).Direccion;
+                    r.Cells[5].Value = ((Cliente)obj).NombreLocalidad.NombreLocalidad;
+                    r.Cells[6].Value = ((Cliente)obj).NombreProvincia.NombreProvincia;
+                    r.Cells[7].Value = ((Cliente)obj).NombrePais.NombrePais;
+                    r.Cells[8].Value = ((Cliente)obj).TelefonoFijo;
+                    r.Cells[9].Value = ((Cliente)obj).TelefonoMovil;
+                    r.Cells[10].Value =((Cliente)obj).CorreoElectronico;
+                    break;
             }
 
             r.Tag = obj;

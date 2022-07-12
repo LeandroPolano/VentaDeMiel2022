@@ -15,7 +15,7 @@ namespace VentaDeMiel2022.Windows.Helpers
 {
     public static class HelperCombos
     {
-        public static void CargarDatosComboTipos(ref ComboBox combo)
+        public static void CargarDatosComboPais(ref ComboBox combo)
         {
             IServicioPais servicio = new ServicioPaises();
             var lista = servicio.GetLista();
@@ -38,7 +38,7 @@ namespace VentaDeMiel2022.Windows.Helpers
             Provincia tpDefault = new Provincia()
             {
                 ProvinciaId = 0,
-                NombreProvincia = "Seleccione Tipo De Provincia"
+                NombreProvincia = "Seleccione una Provincia"
             };
             lista.Insert(0, tpDefault);
             combo.DataSource = lista;
@@ -46,7 +46,42 @@ namespace VentaDeMiel2022.Windows.Helpers
             combo.ValueMember = "ProvinciaId";
             combo.SelectedIndex = 0;
         }
-      
+
+
        
+        public static void CargarDatosComboLocalidad(ref ComboBox combo)
+        {
+
+
+            IServicioLocalidad servicio = new ServicioLocalidad();
+            var lista = servicio.GetLista();
+            Localidad tpDefault = new Localidad()
+            {
+                LocalidadId = 0,
+                NombreLocalidad = "Seleccione una Localidad"
+            };
+            lista.Insert(0, tpDefault);
+            combo.DataSource = lista;
+            combo.DisplayMember = "NombreLocalidad";
+            combo.ValueMember = "LocalidadId";
+            combo.SelectedIndex = 0;
+        }
+        public static void CargarDatosComboTipoDocumento(ref ComboBox combo)
+        {
+
+
+            IServicioTipoDeDocumentos servicio = new ServicioTipoDeDocumento();
+            var lista = servicio.GetLista();
+            TipoDeDocumento tpDefault = new TipoDeDocumento()
+            {
+                TipoDeDocumentoId = 0,
+                Descripcion = "Seleccione un tipo de documento"
+            };
+            lista.Insert(0, tpDefault);
+            combo.DataSource = lista;
+            combo.DisplayMember = "Descripcion";
+            combo.ValueMember = "TipoDeDocumentoId";
+            combo.SelectedIndex = 0;
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace VentaDeMiel2022.Servicio.Servicios
         {
             try
             {
-                return repositorio.GetLista(td,L,pr,p,orden);
+                return repositorio.GetLista();
             }
             catch (Exception e)
             {

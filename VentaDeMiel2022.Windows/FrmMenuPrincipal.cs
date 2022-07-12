@@ -72,5 +72,11 @@ namespace VentaDeMiel2022.Windows
             FrmLocalidades frm = new FrmLocalidades() { Text = "Localidades" };
             DialogResult dr = frm.ShowDialog(this);
         }
+
+        private void ClienteButton_Click(object sender, EventArgs e)
+        {
+            FrmClientes frm = new FrmClientes() { Text = "Clientes" };
+            DialogResult dr = frm.ShowDialog(this);
+        }
     }
 }

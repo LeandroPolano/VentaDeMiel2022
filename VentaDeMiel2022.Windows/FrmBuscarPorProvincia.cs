@@ -49,7 +49,7 @@ namespace VentaDeMiel2022.Windows
 
         private void FrmBuscarPorProvincia_Load_1(object sender, EventArgs e)
         {
-            HelperCombos.CargarDatosComboTipos(ref ProvinciaComboBox);
+            HelperCombos.CargarDatosComboPais(ref ProvinciaComboBox);
 
         }
 

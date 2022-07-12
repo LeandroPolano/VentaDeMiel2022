@@ -31,7 +31,7 @@ namespace VentaDeMiel2022.Windows
 
         private void FrmBuscarPorPais_Load(object sender, EventArgs e)
         {
-            HelperCombos.CargarDatosComboTipos(ref PaisComboBox);
+            HelperCombos.CargarDatosComboPais(ref PaisComboBox);
 
         }
 
